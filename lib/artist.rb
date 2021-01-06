@@ -19,4 +19,5 @@ class Artist
   def genres
     songs.collect {|this_artist_song| this_artist_song.genre}
   end
-  
+
+end
