@@ -7,22 +7,22 @@ class Patient
     @@all << self
   end
 
-  def songs
-    Song.all.select {|song| song.genre == self}
+  def appoinments
+    Appointment.all.select {|appointment| appointment.patient == self}
   end
 
   def self.all
     @@all
   end
 
-  def artists
-    artist_array = [ ]
-    Song.all.each do |song|
-      if song.genre == self
-        artist_array << song.artist
+  def doctors
+    doctors_array = [ ]
+    Appointment.all.each do |appointment|
+      if appointment.patient == self
+        doctors_array << appointment.doctor
       end
     end
-    artist_array
+    doctors_array
   end
 
 end
